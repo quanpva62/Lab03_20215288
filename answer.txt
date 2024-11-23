@@ -1,0 +1,2 @@
+Java không cho phép tạo hai constructor như vậy vì chúng chỉ khác nhau ở tên tham số (title và category). 
+Trong Java, các constructor hoặc phương thức được phân biệt qua số lượng và kiểu dữ liệu của các tham số, chứ không phải qua tên tham số. Nếu tạo hai constructor như vậy, Java sẽ báo lỗi vì hai phương thức này có cùng kiểu chữ ký (signature).
