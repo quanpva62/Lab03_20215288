@@ -1,2 +1,16 @@
 Java không cho phép tạo hai constructor như vậy vì chúng chỉ khác nhau ở tên tham số (title và category). 
 Trong Java, các constructor hoặc phương thức được phân biệt qua số lượng và kiểu dữ liệu của các tham số, chứ không phải qua tên tham số. Nếu tạo hai constructor như vậy, Java sẽ báo lỗi vì hai phương thức này có cùng kiểu chữ ký (signature).
+
+------------Lab 03---------------
+- Question: Is JAVA a Pass by Value or a Pass by Reference programming language? 
+	+ Java là Pass by Value
+
+
+- After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+	+ Vì Java là Pass by Value, tham chiếu của jungleDVD và cinderellaDVD được sao chép vào swap(), mọi thay đổi của phương thức áp dụng cho bản sao của tham chiếu, không thay đổi bản gốc
+
+
+- After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+	+ Phương thức changeTitle() thao tác trực tiếp trên thuộc tính của đối tượng jungleDVD
+
+	
