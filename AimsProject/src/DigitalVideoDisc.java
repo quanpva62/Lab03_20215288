@@ -43,6 +43,12 @@ public class DigitalVideoDisc {
 		return id;
 	}
 	
+
+    public boolean isMatch(String title) {
+        return this.title.equalsIgnoreCase(title);
+    }
+    
+
 	public DigitalVideoDisc(String title) {
 	    this.title = title;
 	    nbDigitalVideoDiscs++;
