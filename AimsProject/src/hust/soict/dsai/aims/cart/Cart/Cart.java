@@ -1,5 +1,7 @@
-
+package hust.soict.dsai.aims.cart.Cart;
 import java.util.ArrayList;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
 
 public class Cart {
     private ArrayList<DigitalVideoDisc> items = new ArrayList<>();
@@ -14,20 +16,20 @@ public class Cart {
         }
     }
 
-    
+    // Overload method: addDigitalVideoDisc with array
     public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
         for (DigitalVideoDisc dvd : dvdList) {
             this.addDigitalVideoDisc(dvd);
         }
     }
 
-    
+    // Overload method: addDigitalVideoDisc with two DVDs
     public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
         this.addDigitalVideoDisc(dvd1);
         this.addDigitalVideoDisc(dvd2);
     }
 
-    
+    // Print cart
     public void printCart() {
         System.out.println("***********************CART***********************");
         System.out.println("Ordered Items:");
