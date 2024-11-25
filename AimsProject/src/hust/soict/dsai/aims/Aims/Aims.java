@@ -22,6 +22,8 @@ public class Aims {
         //11
         cart.removeDigitalVideoDisc(dvd2);
         System.out.println("Total cost after removing dvd2: $" + cart.totalCost());
+        
+        System.out.println("Release Flow Demonstration!");
 
     }
 }
