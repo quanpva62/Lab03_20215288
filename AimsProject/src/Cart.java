@@ -13,14 +13,14 @@ public class Cart {
         }
     }
 
-    // Overload method: addDigitalVideoDisc with array
+    
     public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
         for (DigitalVideoDisc dvd : dvdList) {
             this.addDigitalVideoDisc(dvd);
         }
     }
 
-    // Overload method: addDigitalVideoDisc with two DVDs
+    
     public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
         this.addDigitalVideoDisc(dvd1);
         this.addDigitalVideoDisc(dvd2);
@@ -45,30 +45,7 @@ public class Cart {
         System.out.println("***************************************************");
     }
 
-    // Search by ID
-    public DigitalVideoDisc searchById(int id) {
-        for (DigitalVideoDisc dvd : items) {
-            if (dvd.getId() == id) {
-                return dvd;
-            }
-        }
-        System.out.println("No match found for ID: " + id);
-        return null;
-    }
 
-    // Search by title
-    public void searchByTitle(String title) {
-        boolean found = false;
-        for (DigitalVideoDisc dvd : items) {
-            if (dvd.getTitle().equalsIgnoreCase(title)) {
-                System.out.println("Found: " + dvd.getTitle());
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("No match found for title: " + title);
-        }
-    }
 
     // Remove a disc from cart
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
