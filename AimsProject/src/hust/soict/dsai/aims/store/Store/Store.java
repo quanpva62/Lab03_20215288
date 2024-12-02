@@ -1,41 +1,40 @@
 package hust.soict.dsai.aims.store.Store;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
 import java.util.ArrayList;
-
-import hust.soict.dsai.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
+import java.util.List;
 
 public class Store {
-    private ArrayList<DigitalVideoDisc> itemsInStore = new ArrayList<>();
+    private ArrayList<Media> itemsInStore;  
+    private List<Media> medias;
 
-    
-    public void addDVD(DigitalVideoDisc dvd) {
-        itemsInStore.add(dvd);
-        System.out.println("The DVD [" + dvd.getTitle() + "] has been added to the store.");
+    public Store() {
+        this.itemsInStore = new ArrayList<>();
     }
 
-    
-    public void removeDVD(DigitalVideoDisc dvd) {
-        if (itemsInStore.remove(dvd)) {
-            System.out.println("The DVD [" + dvd.getTitle() + "] has been removed from the store.");
-        } else {
-            System.out.println("The DVD [" + dvd.getTitle() + "] is not found in the store.");
-        }
-    }
-
-    
-    public void displayStore() {
-        System.out.println("***********************STORE***********************");
-        if (itemsInStore.isEmpty()) {
-            System.out.println("The store is empty.");
-        } else {
-            for (int i = 0; i < itemsInStore.size(); i++) {
-                DigitalVideoDisc dvd = itemsInStore.get(i);
-                System.out.println((i + 1) + ". " + dvd.getTitle() + " - " 
-                        + dvd.getCategory() + " - " 
-                        + dvd.getDirector() + " - " 
-                        + dvd.getLength() + " mins - " 
-                        + dvd.getCost() + " $");
+    public Media getMediaByTitle(String title) {
+        for (Media media : medias) {
+            if (media.getTitle().equalsIgnoreCase(title)) {
+                return media;
             }
         }
-        System.out.println("***************************************************");
+        return null;
+    }
+    public void removeMedia(String title) {
+        medias.remove(title);
+    }
+
+    public void addMedia(Media media) {
+        medias.add(media);
+    }
+
+    public List<Media> getAllMedia() {
+        return medias;
+    }
+    public void displayStore() {
+        System.out.println("********* Store *********");
+        for (Media media : itemsInStore) {
+            System.out.println("Media: " + media.getTitle() + ", Cost: " + media.getCost());
+        }
     }
 }
