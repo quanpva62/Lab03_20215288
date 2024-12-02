@@ -13,4 +13,20 @@ Trong Java, các constructor hoặc phương thức được phân biệt qua s�
 - After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
 	+ Phương thức changeTitle() thao tác trực tiếp trên thuộc tính của đối tượng jungleDVD
 
-	
+------------Lab 04---------------	
+
+1. -What class should implement the Comparable interface?
+
+Lớp Media hoặc các lớp con của nó (như DigitalVideoDisc, CompactDisc, Book) cần triển khai giao diện Comparable.
+Việc triển khai giao diện Comparable cho phép các đối tượng của lớp này được sắp xếp theo một tiêu chí nhất định.
+2. -In those classes, how should you implement the compareTo()method be to reflect the ordering that we want?
+
+Phương thức compareTo() sẽ so sánh hai đối tượng của lớp đó theo một tiêu chí nào đó (ví dụ: theo tiêu đề, theo giá trị chi phí, hoặc một số thuộc tính khác).
+3. -Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+
+Không, nếu sử dụng giao diện Comparable, mỗi lớp chỉ có thể có một quy tắc sắp xếp duy nhất (một phương thức compareTo() duy nhất).
+Điều này có nghĩa là bạn chỉ có thể chọn một thứ tự sắp xếp mặc định cho các đối tượng của lớp. Nếu bạn muốn nhiều quy tắc sắp xếp, bạn sẽ phải sử dụng Comparator thay vì Comparable, vì Comparator cho phép bạn định nghĩa nhiều cách sắp xếp khác nhau mà không cần thay đổi lớp đối tượng.
+4. -Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+
+Nếu bạn muốn có một quy tắc sắp xếp đặc biệt cho các đối tượng DigitalVideoDisc (DVD) mà không ảnh hưởng đến các đối tượng Media khác, bạn có thể ghi đè phương thức compareTo() trong lớp DigitalVideoDisc.
+Phương thức compareTo() trong lớp DigitalVideoDisc sẽ so sánh theo tiêu đề, sau đó theo chiều dài (giảm dần), và cuối cùng là chi phí.
